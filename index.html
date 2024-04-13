@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>KING KONG ZIP LINE PICTURES</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="logo/favicon.png" type="image/x-icon">
+
+</head>
+<script>
+    function buscar() {
+        var busqueda = document.getElementById("busqueda").value.toLowerCase();
+        var resultadosDiv = document.getElementById("resultados");
+
+        if (busqueda === "") {
+            resultadosDiv.innerHTML = "Please insert your email that you left with us.";
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "datos.txt", true);
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                var lines = xhr.responseText.split("\n");
+                var resultados = [];
+
+                for (var i = 0; i < lines.length; i++) {
+                    var line = lines[i].toLowerCase();
+                    if (line.includes(busqueda)) {
+                        var parts = line.split(" ");
+                        if (parts.length === 2) {
+                            var correo = parts[0];
+                            var enlace = parts[1];
+
+                            // Crear un enlace HTML válido
+                            var enlaceHTML = '<a href="' + enlace + '" target="_blank" style="text-decoration:none">' + correo + '</a>';
+                            resultados.push(enlaceHTML);
+                        }
+                    }
+                }
+
+                if (resultados.length > 0) {
+                    resultadosDiv.innerHTML = resultados.join("<br>");
+                } else {
+                    resultadosDiv.innerHTML = "No results found, contact us.";
+                }
+            }
+        };
+
+        xhr.send();
+    }
+</script>
+
+
+
+
+<body>
+    <div class="logo">
+        <img src="logo/logo.png" alt="" width="300px" height="150px">
+    </div>
+    
+    <div class="presentacion">
+        <h2>PICTURES SERVICES</h2>
+
+	<p>If you want to visit our 				website
+	<a href="https://kingkongextremezipline.com/"> click here.</a></p>
+        <p>This is a picture service back up from King Kong Extreme Zip Line, a micro-business dedicated to offering photographic services.</p>
+<p>On this site we will host all the links to all the photographs sold daily. If you can't find your email or link, we also have a contact list for support.</p>
+        <br>
+        
+    <br>
+    </div>
+    <div class="pasos">
+        <strong><p>These are the 3 simple steps to get to your link:</p></strong>
+        <p>1. Enter the email you left with us.</p>
+        <p>2. Click search.</p>
+        <p>3. It will show you your email, click on your email and it will take you to your photos in We Transfer.</p>
+    </div><br><br>
+    <div class="Buscar">
+        <input type="text" id="busqueda" placeholder="Search email..."><br><br><br>
+<button onclick="buscar()" id="btnbuscar">Search</button>
+    </div>
+
+
+ <div id="resultados">
+        <!-- Aquí se mostrarán los resultados -->
+ </div><br>
+<br><br>
+
+
+
+ <div class="sociales">
+    <h2>Contact us.</h2>
+    <a href="https://wa.me/+50494454100" class="fa fa-whatsapp" target="_blank"></a>
+    <a href="mailto:kingkongroaextreme@gmail.com" class="fa fa-envelope" target="_blank"></a>
+    <br><br><br><br>
+ </div>
+
+
+    </body>
+</html>

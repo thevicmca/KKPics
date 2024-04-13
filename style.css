@@ -1,0 +1,119 @@
+*{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #EDF6F2;
+  
+  
+}
+.logo{
+  text-align: center;
+}
+.presentacion{
+  padding-left: 40%;
+  padding-right: 40%;
+  text-align: center;
+  font-size: 16px;
+}
+.presentacion p{
+  color: #314652;
+  font-size: 16px;
+}
+.presentacion a{
+  text-decoration: none;
+}
+h2{
+  color: #314652;
+}
+
+.pasos{
+  align-items: center;
+  text-align: left;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media (max-width: 1920px) {
+.presentacion {
+    text-align: left;
+}
+.presentacion {
+  padding-left: 10%;
+  padding-right: 10%; 
+}
+}
+
+
+
+@media (max-width: 640px) {
+.pasos{
+  text-align: left;
+  padding-left: 10%;
+  padding-right: 10%; 
+}
+}
+.pasos p{
+color: #314652;
+font-size: 16px;
+}
+#busqueda {
+  background-color: #f2f2f2; /* Cambia el color de fondo */
+  color: #314652; /* Cambia el color del texto */
+  width: 250px;
+  height: 35px;
+  border-color: #314652;
+  border-radius: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+#btnbuscar{
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #314652;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+  
+}
+#btnbuscar:hover {
+  transform: scale(1.2);
+}
+
+.Buscar{
+padding-bottom: 5%;
+text-align: center;
+padding-left: 40%;
+padding-right: 40%;
+}
+@media (max-width: 640px) {
+.Buscar{
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%; 
+}
+}
+#resultados{
+text-align: center;
+font-size: 18px;
+}
+
+.sociales{
+text-align: center;
+}
+.sociales a {
+text-decoration: none;
+font-size: 18px;
+width: 40px;
+height: 40px;
+line-height: 40px;
+background: #314652;
+color: #f1f1f1;
+border-radius: 50%;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+transition: all .4s ease-in-out;
+}
+
+.sociales a:hover {
+transform: scale(1.2);
+}
